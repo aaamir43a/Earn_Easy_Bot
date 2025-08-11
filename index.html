@@ -64,7 +64,22 @@
         .task-info .completed-val{color:var(--success-color)}.task-info .remaining-val{color:var(--danger-color)}
         .progress-bar-container{width:100%;height:16px;background-color:#e9ecef;border-radius:8px;overflow:hidden;margin:25px 0 20px}
         .progress-bar-fill{height:100%;width:0;background-color:var(--success-color);border-radius:8px;transition:width .4s ease-in-out;color:#fff;display:flex;align-items:center;justify-content:center;font-size:.8em;font-weight:600}
-        #custom-notification{position:fixed;top:10px;left:50%;transform:translateX(-50%);background-color:var(--success-color);color:#fff;padding:12px 25px;border-radius:12px;z-index:1000;font-weight:500;font-size:.9em;opacity:0;transition:opacity .4s ease,top .4s ease;visibility:hidden}#custom-notification.show{visibility:visible;opacity:1;top:20px}.divider{border:0;height:1px;background-color:#e9ecef;margin:25px 0}
+        
+        /* New Style for Earn Page Notification */
+        #earn-page-notification {
+            color: var(--success-color);
+            background-color: transparent;
+            font-weight: 600;
+            font-size: 1.1em;
+            text-align: center;
+            margin-bottom: -5px; /* Adjust spacing */
+            margin-top: -15px; /* Adjust spacing */
+            padding: 10px;
+            height: 40px; /* Give it a fixed height to prevent layout shifts */
+            line-height: 40px;
+        }
+
+        .divider{border:0;height:1px;background-color:#e9ecef;margin:25px 0}
         .btn,.submit-btn{display:flex;align-items:center;justify-content:center;width:100%;padding:15px;border:none;border-radius:12px;font-size:1.1em;font-weight:600;color:#fff;cursor:pointer;transition:transform .2s;box-sizing:border-box}
         .btn:disabled,.submit-btn:disabled{background-color:#bdc3c7;cursor:not-allowed}
         .btn:active:not(:disabled),.submit-btn:active:not(:disabled){transform:scale(.98)}
@@ -161,7 +176,7 @@
         <div id="earn-page" class="page">
             <div class="earn-withdraw-container">
                 <h1 class="main-title">Earn Rewards</h1>
-                <div id="custom-notification"></div>
+                <div id="earn-page-notification"></div>
                 <div class="card">
                     <h2 class="card-title">Today's Tasks</h2>
                     <div class="task-info">
@@ -490,13 +505,15 @@
         }
 
         function showCustomNotification(message) {
-            const el = document.getElementById('custom-notification');
+            const el = document.getElementById('earn-page-notification');
             if(!el) return;
+            
             clearTimeout(notificationTimeout);
+            
             el.textContent = message;
-            el.classList.add('show');
+            
             notificationTimeout = setTimeout(() => {
-                el.classList.remove('show');
+                el.textContent = '';
             }, 4000);
         }
 

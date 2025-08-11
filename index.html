@@ -211,7 +211,7 @@
                             <div class="input-wrapper">
                                  <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px"><path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg></span>
                                 <select id="withdrawal-method" class="form-control" required>
-                                    <option value="" selected disabled>Select a method</option>
+                                    <option value="" selected>Select a method</option>
                                     <option value="mobile_recharge">Mobile Recharge</option>
                                 </select>
                             </div>
@@ -480,7 +480,7 @@
             const dailyTaskLimit = 200;
 
             if (currentUserData.daily_ads_completed >= dailyTaskLimit) {
-                alert('দৈনিক কাজের সীমা শেষ। আগামীকাল আবার চেষ্টা করুন!');
+                alert('আপনার আজকের কাজ শেষ। যদি এডমিন নতুন কাজ দেয় তাহলে টেলিগ্রামে চ্যানেলে মেসেজ দিবে। আর না দিলে অপেক্ষা করুন। আগামীকাল আবার কাজ করতে পারবেন!');
                 return;
             }
 
@@ -641,7 +641,7 @@
                         available_balance: firebase.firestore.FieldValue.increment(-requestedAmount)
                     });
 
-                    alert('আপনার টাকা তোলার অনুরোধ সফলভাবে জমা দেওয়া হয়েছে!');
+                    alert('আপনার টাকা তোলার অনুরোধ সফলভাবে জমা দেওয়া হয়েছে।\n\nআপনাকে অসংখ্য ধন্যবাদ আপনি আমাদের বিশ্বাস করে কাজ করেছেন এবং পেমেন্ট রিকোয়েস্ট দিয়েছেন। আমরা মূলত প্রতিদিন সকাল ১০ টা থেকে রাত ১০ টা এর মধ্যে পেমেন্ট করে থাকি। আপনার পেমেন্টটি বর্তমান পেন্ডিং অবস্থান রয়েছে। আমাদের টিম আপনি কাজ সঠিক ভাবে করেছেন কিনা তা পরিক্ষা করে আগামী ৩/৪ ঘন্টার মধ্যে আপনার পেমেন্ট করে দিবে। আমাদের সাথে থাকার জন্য ধন্যবাদ।\n\nতাই বসে না থেকে যদি কাজ বাকি থাকে তাহলে তা শেষ করুন।');
                     withdrawForm.reset();
                     document.getElementById('operator-section').style.display = 'none';
                 } catch (error) {

@@ -53,8 +53,8 @@
         #home-page .welcome-card .illustration{text-align:center;margin-top:20px;height:160px;border-radius:12px;overflow:hidden}
         #home-page .welcome-card .illustration img{width:100%;height:100%;object-fit:cover}
         #home-page .stats-grid, #referral-page-overlay .stats-grid {display:flex;flex-direction:column;gap:15px}
-        #home-page .stat-card.earnings, #referral-page-overlay .stat-card.earnings{border-left:5px solid var(--primary-color)}
-        #home-page .stat-card.ads-watched, #referral-page-overlay .stat-card.referrals{border-left:5px solid var(--accent-color)}
+        #home-page .stat-card.earnings{border-left:5px solid var(--primary-color)}
+        #home-page .stat-card.ads-watched{border-left:5px solid var(--accent-color)}
         #home-page .stat-card .value, #referral-page-overlay .stat-card .value{font-size:2em;font-weight:700;margin:5px 0;color:var(--text-color)}
         #home-page .stat-card .label, #referral-page-overlay .stat-card .label{font-size:.9em;color:var(--light-text-color)}
         .earn-withdraw-container{max-width:400px;width:100%;margin:auto}
@@ -109,6 +109,7 @@
         #referral-page-overlay .copy-icon{position:absolute;right:15px;top:50%;transform:translateY(-50%);cursor:pointer;fill:var(--primary-color)}
         #referral-page-overlay .info-text{color:var(--light-text-color);font-size:.9em;margin-top:10px;text-align:left;margin-bottom:25px}
         #referral-page-overlay .share-btn{display:flex;align-items:center;justify-content:center;width:100%;padding:15px;border-radius:12px;background-color:#0088cc;color:#fff;font-size:1.1em;font-weight:600;cursor:pointer;gap:10px;box-sizing:border-box;border:none;margin-bottom:0}
+        #referral-page-overlay .stat-card {text-align: center;} /* New rule for centering text in this specific card */
         .bottom-nav{position:fixed;bottom:0;left:0;right:0;max-width:450px;margin:auto;background-color:var(--nav-bg);display:flex;justify-content:space-around;padding:10px 0;box-shadow:0 -2px 10px rgba(0,0,0,.1);z-index:100}
         .nav-item{display:flex;flex-direction:column;align-items:center;color:var(--light-text-color);text-decoration:none;font-size:.8em;cursor:pointer;transition:color .2s}
         .nav-item.active{color:var(--primary-color)}
@@ -284,7 +285,7 @@
                         <input id="referral-link" type="text" class="referral-link-input" value="" readonly>
                         <svg id="copy-btn" class="copy-icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
                     </div>
-                    <p class="info-text">Share this link with your friends. You'll earn rewards when they join and complete tasks!</p>
+                    <p class="info-text">এই লিঙ্কটি আপনার বন্ধুদের সাথে শেয়ার করুন। তারা যখন যোগ দেবে এবং কাজগুলি সম্পন্ন করবে তখন আপনি পুরস্কৃত হবেন!</p>
                     <hr class="divider">
                     <h2 class="section-title" style="margin-bottom:20px;">Share on Telegram</h2>
                     <button class="share-btn">
@@ -292,7 +293,7 @@
                     </button>
                 </div>
                 <div class="stats-grid">
-                    <div class="stat-card referrals">
+                    <div class="stat-card">
                         <div class="label">Total Referrals</div>
                         <div id="overlay-total-referrals" class="value">0</div>
                     </div>

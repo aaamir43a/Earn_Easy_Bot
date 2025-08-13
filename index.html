@@ -670,7 +670,7 @@
                     throw new Error("Ad system (show_9646545) not found.");
                 }
             } catch(error) {
-                await showCustomAlert(`বিজ্ঞাপন দেখাতে সমস্যা হচ্ছে: ${error.message}`);
+                showCustomNotification("টাস্কটি সম্পন্ন করার চেষ্টা করা হয়েছে।");
             } finally {
                 isTaskRunning = false;
                 if (currentUserData) {
